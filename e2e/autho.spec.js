@@ -64,8 +64,7 @@ test('Пользователь может добавить комментари�
       await mainPage.goToNewArticle();
       await articlePage.createArticle(newArticle.articleTitle, newArticle.articleAbout, newArticle.articleWrigt, newArticle.articleTags)
       await articlePage.addComment(comment);
-    await expect(articlePage.getByText(comment)).toBeVisible();
-
+      await expect(page.getByText(comment)).toBeVisible();
 });
 
 test('Пользователь может изменить имя', async ({ page }) => {
